@@ -1,19 +1,17 @@
 package main
 
-import (
-	"encoding/json"
-	"fmt"
+import "sync"
 
-	"github.com/nishisuke/try-review-tools/internal/foo"
-)
-
-type Foo struct {
-	bar string
-
+type EmbedsMutex struct {
+	key int
+	sync.Mutex
 }
+
 func main() {
-	dat := Foo{"ssssss"}
-	byt,_ := json.Marshal(dat)
-	fmt.Println(byt)
-	foo.Bar()
+	var v1, v2 int
+	println(v1 == v2)
+	println(v1 != v2)
+	if v1 == 0 && v1 == 0 {
+		println("hello, world!")
+	}
 }

@@ -1,6 +1,6 @@
 // +build ignore
 
-package foo
+package gorules
 
 import "github.com/quasilyte/go-ruleguard/dsl"
 
@@ -31,4 +31,3 @@ func exposedMutex(m dsl.Matcher) {
 		Where(isExported(m["name"])).
 		Report("don not embed sync.RWMutex")
 }
-
